@@ -1,0 +1,28 @@
+{
+  "name": "mqttmongosub",
+  "version": "1.0.0",
+  "description": "A mqtt subscriber to store messages in Mongodb",
+  "main": "mqttMongoSub.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ravenOSS/mongodbMQTTSubscriber.git"
+  },
+  "keywords": [
+    "mqtt",
+    "mongodb",
+    "pubsub"
+  ],
+  "author": "DJR / ravenOSS",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ravenOSS/mongodbMQTTSubscriber/issues"
+  },
+  "homepage": "https://github.com/ravenOSS/mongodbMQTTSubscriber#readme",
+  "dependencies": {
+    "mongodb": "^3.1.6",
+    "mqtt": "^2.18.8"
+  }
+}
