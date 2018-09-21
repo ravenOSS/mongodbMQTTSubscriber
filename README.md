@@ -8,4 +8,6 @@ You can install mongodb locally or use a hosted solution such as Mongodb Atlas o
 
 Note that the URLs will have to be modified to match your resources. You can rename the database and collection names.
 
-
+TODO
+- complete config.js construction
+- require config.js 
