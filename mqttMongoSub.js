@@ -1,4 +1,4 @@
-var mqtt = require('mqtt');
+const mqtt = require('mqtt');
 // var config = require('./config');
 
 const MongoClient = require('mongodb').MongoClient;
@@ -19,7 +19,7 @@ MongoClient.connect(mongourl, { useNewUrlParser: true }, function (err, client) 
 
   const db = client.db(dbName);
 
-  var mqttoptions = {
+  const mqttoptions = {
     keepalive: 60,
     clientId: mqttSubId,
     protocolId: 'MQTT',
@@ -38,7 +38,7 @@ MongoClient.connect(mongourl, { useNewUrlParser: true }, function (err, client) 
 
   let subs = [{ topic: 'clientTest', qos: 1 }];
 
-  var mqttclient = mqtt.connect(mqtturl, mqttoptions);
+  const mqttclient = mqtt.connect(mqtturl, mqttoptions);
 
   mqttclient.on('connect', function () {
     console.log('%s mqtt client connected', mqttSubId);
