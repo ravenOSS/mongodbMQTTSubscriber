@@ -36,19 +36,20 @@ MongoClient.connect(mongourl, { useNewUrlParser: true }, function (err, client) 
     }
   };
 
-  let subs = [{ topic: 'clientTest', qos: 1 }];
+  let subscriptions = {'clientTest': 1};
 
   const mqttclient = mqtt.connect(mqtturl, mqttoptions);
-
-  mqttclient.on('connect', function () {
-    console.log('%s mqtt client connected', mqttSubId);
-    mqttclient.subscribe({subs, mqttSubId});
-  });
 
   mqttclient.on('error', function (err) {
     console.log(err);
     mqttclient.end();
   });
+
+  mqttclient.on('connect', function () {
+    console.log('%s mqtt client connected', mqttSubId);
+  });
+
+  mqttclient.subscribe({subscriptions, mqttSubId});
 
   mqttclient.on('message', function (topic, message) {
     console.log('%s Rec: %s Topic: %s', mqttSubId, message, topic);
